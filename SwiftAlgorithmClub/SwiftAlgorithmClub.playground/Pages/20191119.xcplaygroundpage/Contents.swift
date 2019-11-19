@@ -5,6 +5,7 @@ import Foundation
 /**
 * 카카오 오픈챗 Swift Algorithm Club 문제 풀이
 * 2019.11.19  방문 길이 구하기
+* https://programmers.co.kr/learn/courses/30/lessons/49994?language=swift
 * **/
 
 struct Load {

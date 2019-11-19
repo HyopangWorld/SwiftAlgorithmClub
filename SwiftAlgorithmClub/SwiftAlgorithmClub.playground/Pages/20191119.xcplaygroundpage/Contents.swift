@@ -2,6 +2,11 @@
 
 import Foundation
 
+/**
+* 카카오 오픈챗 Swift Algorithm Club 문제 풀이
+* 2019.11.19  방문 길이 구하기
+* **/
+
 struct Load {
     struct Coordinate: Hashable {
         var x: Int
@@ -11,9 +16,13 @@ struct Load {
             self.x = x
             self.y = y
         }
+        
+        static func + (lhs: Coordinate, rhs: Coordinate) -> Coordinate {
+            Coordinate(lhs.x + rhs.x, lhs.y + rhs.y)
+        }
     }
 
-    struct Way: Hashable {
+    struct Path: Hashable {
         var start: Coordinate
         var end: Coordinate
         
@@ -22,7 +31,7 @@ struct Load {
             hasher.combine(self.end)
         }
         
-        static func == (lhs: Way, rhs: Way) -> Bool {
+        static func == (lhs: Path, rhs: Path) -> Bool {
             (lhs.start == rhs.start && lhs.end == rhs.end)
             || (lhs.start == rhs.end && lhs.end == rhs.start)
         }
@@ -48,8 +57,8 @@ struct Load {
         }
     }
     
-    private var loads: [Way] = []
-    private var location: Coordinate = Coordinate(0,0)
+    private var loads: [Path] = []
+    private var position: Coordinate = Coordinate(0,0)
     
     var newLoadCount: Int {
         loads.count
@@ -60,20 +69,20 @@ struct Load {
             return
         }
         
-        if abs(location.x + direction.x) > 5 || abs(location.y + direction.y) > 5 {
+        let move = position + direction
+        
+        if abs(move.x) > 5 || abs(move.y) > 5 {
             return
         }
         
-        let start = location
-        location.x += direction.x
-        location.y += direction.y
+        let way = Path(start: position, end: move)
         
-        let way = Way(start: start, end: location)
         if loads.contains(where: { $0 == way }) {
             return
         }
         
         loads.append(way)
+        position = move
     }
     
 }

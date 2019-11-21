@@ -1,5 +1,11 @@
 import Foundation
 
+/**
+* 카카오 오픈챗 Swift Algorithm Club 문제 풀이
+* 2019.11.20  네트워크 (깊이, 너비탐색)
+* https://programmers.co.kr/learn/courses/30/lessons/42840?language=swift
+* **/
+
 // 정점에서 출발
 // 이동할 곳이 있나 체크
 //      a. 있으면 str에 추가하고 이동

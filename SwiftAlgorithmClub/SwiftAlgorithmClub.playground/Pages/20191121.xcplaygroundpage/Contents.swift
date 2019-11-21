@@ -1,5 +1,11 @@
 import Foundation
 
+/**
+* 카카오 오픈챗 Swift Algorithm Club 문제 풀이
+* 2019.11.21  모의고사
+* https://programmers.co.kr/learn/courses/30/lessons/42840?language=swift
+* **/
+
 struct MathHatter {
     var number: Int
     var answer: [Int]

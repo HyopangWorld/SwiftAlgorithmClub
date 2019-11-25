@@ -47,7 +47,6 @@ func solution1_2(_ heights:[Int]) -> [Int] {
     return tower.reversed()
 }
 
-
 // 짧게 줄이고 싶은 더 큰 욕구.... 그치만 복잡도 더 올라감....
 func solution1_3(_ heights:[Int]) -> [Int] {
     return heights.enumerated().map { i, _ in

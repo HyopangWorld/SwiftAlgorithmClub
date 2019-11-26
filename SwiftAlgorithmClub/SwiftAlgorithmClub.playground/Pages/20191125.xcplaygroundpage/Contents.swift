@@ -26,11 +26,11 @@ func solution(_ bridge_length:Int, _ weight:Int, _ truck_weights:[Int]) -> Int {
     return time + bridge_length
 }
 
-//print("\(solution(10, 10, [1,2,3,4,5,1,2,3,4,5]))")
-//print("")
-//
-//print("\(solution(10, 10, [1,2,3,4,5,6,7,8,9,10]))")
-//print("")
+print("\(solution(10, 10, [1,2,3,4,5,1,2,3,4,5]))")
+print("")
+
+print("\(solution(10, 10, [1,2,3,4,5,6,7,8,9,10]))")
+print("")
 
 /**
  * 2019.11.25  멀리 뛰기 (매운맛)

@@ -1,6 +1,16 @@
 import Foundation
 
 /**
+ * 2019.11.27 직사각형 별찍기 (순한맛)
+ * https://programmers.co.kr/learn/courses/30/lessons/12969
+ * **/
+
+let n = readLine()!.components(separatedBy: [" "]).map { Int($0)! }
+let a = String(repeating: "*", count: n[0])
+print(String(repeating: a+"\n", count: n[1]))
+
+
+/**
  * 2019.11.27 소수 찾기 (매운맛)
  * https://programmers.co.kr/learn/courses/30/lessons/42839
  * **/
@@ -53,4 +63,4 @@ func solution(_ numbers:String) -> Int {
     return Set(primeNumbers).count
 }
 
-print("\(solution("12345"))")
+//print("\(solution("12345"))")

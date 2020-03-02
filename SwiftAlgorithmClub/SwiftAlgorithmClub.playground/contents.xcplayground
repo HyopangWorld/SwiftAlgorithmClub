@@ -14,9 +14,11 @@
         <page name='20191128'/>
         <page name='20191129'/>
         <page name='20191202'/>
-        <page name='20200226_1'/>
+        <page name='math'/>
         <page name='20200226_2'/>
-        <page name='20200227'/>
-        <page name='20200228'/>
+        <page name='sort'/>
+        <page name='search'/>
+        <page name='greedy'/>
+        <page name='string'/>
     </pages>
 </playground>

@@ -1,5 +1,6 @@
 import Foundation
 
+// 그리니디 알고리즘
 func miniumCoin(money: Int){
     let coin = [100, 50, 10, 1]
     var m = money
@@ -212,3 +213,45 @@ func dijkstraSearch(end: String){
 }
 
 dijkstraSearch(end: "1.미용실")
+
+// BinarySearch
+// : 크기 순으로 정렬되어 있는 데이터에서 검색할때
+// items[start]와 items[end] 사이에서 target을 검색함
+func binarySearch(items: [String], start: Int, end: Int, target: String) -> Int {
+    if start > end { return -1 }
+    let middle = (start + end) / 2
+    if target == items[middle] { return middle }
+    else if target > items[middle] { return binarySearch(items: items, start: middle + 1, end: end, target: target)}
+    else { return binarySearch(items: items, start: start, end: middle - 1, target: target)}
+}
+print("이진검색법 \(binarySearch(items: ["a","b","c","d","e","f","g","h","i","j"], start: 0, end: 9, target: "h"))")
+
+/**
+* 2020.03.02 Sherlock and the Vaild String  (midium)
+* https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem?isFullScreen=true
+* **/
+// 1. 각 주택마다 1의 송신기 이상 범위 내에 있도록 설치
+// 2. 송신기는 양옆으로 k 거리 만큼 송신 가능 == k * 2
+// x는 주택 거리 배열, k는 송신 거리
+func hackerlandRadioTransmitters(x: [Int], k: Int) -> Int {
+    let house = x.sorted()
+    var count = 1
+    var i = 0
+    
+    while i < house.count {
+        count += 1
+        var loc = x[i] + k
+        while i < x.count && house[i] <= loc { i += 1 }
+        i -= 1
+        loc = house[i] + k
+        while i < x.count && house[i] <= loc { i += 1 }
+    }
+    
+    print("count : \(count)")
+    return count
+}
+print("")
+print("\(hackerlandRadioTransmitters(x: [1,2,3,4,5], k: 1))")
+print("")
+print("\(hackerlandRadioTransmitters(x: [1,2,3,4,5,1999,2000,2001], k: 2))")
+print("")

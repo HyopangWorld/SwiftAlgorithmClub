@@ -5,7 +5,7 @@ import Foundation
  * **/
 
 // p.24 하노이 타워
- a는 시작점, b는 경유지, c는 목적지
+// a는 시작점, b는 경유지, c는 목적지
 print("")
 func hanoiTower(n: Int, a: String, b: String, c: String) {
     if n == 1 { print("원판 \(n), \(a) -> \(c)") }
